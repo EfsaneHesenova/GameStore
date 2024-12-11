@@ -1,0 +1,39 @@
+﻿@using GameStoreMVC.Models;
+@model Game;
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Game.Title"></label>
+        <input class="form-control" asp-for="Game.Title">
+    </div>
+    <div class="form-group">
+        <label asp-for="Game.Description"></label>
+        <input class="form-control" asp-for="Game.Description">
+    </div>
+    <div class="form-group">
+        <label asp-for="Game.Price"></label>
+        <input class="form-control" asp-for="Game.Price">
+    </div>
+    <div class="form-group">
+        <label asp-for="Master.PhoneNumber"></label>
+        <input class="form-control" asp-for="Master.PhoneNumber">
+    </div>
+    <div class="form-group">
+        <label asp-for="Master.Username"></label>
+        <input class="form-control" asp-for="Master.Username">
+    </div>
+    <div class="form-group">
+        <label asp-for="Master.ExperienceYear"></label>
+        <input class="form-control" asp-for="Master.ExperienceYear">
+    </div>
+    <div class="form-group">
+        <label asp-for="Master.ServiceId" class="control-label">Select Service</label>
+        <select asp-for="Master.ServiceId" class="form-control">
+            <option value="">Select Patient</option>
+            @foreach (var item in Model.Services)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
