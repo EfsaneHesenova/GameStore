@@ -1,6 +1,6 @@
 ﻿@using GameStoreMVC.Models;
 @model IEnumerable<Game>;
-<a type="button" class="btn btn-success mb-3" asp-area="Admin" asp-controller="Master" asp-action="Create">Create Slider</a>
+<a type="button" class="btn btn-success mb-3" asp-area="Admin" asp-controller="Game" asp-action="Detail">Create Slider</a>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -33,8 +33,20 @@
                             <td>@item.Price</td>>
                             <td>@item.GameId</td>>
                             <td>@item.Image</td>>
-                            <td><a class="btn btn-primary" asp-controller="Game" asp-action="Update" asp-route-id="@item.Id" asp-area="Admin">Update</a></td>
-                            <td><a class="btn btn-danger" asp-controller="Game" asp-action="Delete" asp-route-id="@item.Id" asp-area="Admin">Delete</a></td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a class="btn btn-primary" asp-controller="Game" asp-action="Update" asp-route-id="@item.Id" asp-area="Admin">
+                                        <i class="fa-solid fa-pen-nib"></i>
+                                    </a>
+                                    <a class="btn btn-danger" asp-controller="Game" asp-action="Delete" asp-route-id="@item.Id" asp-area="Admin">
+                                        <i class="fa-solid fa-delete-left"></i>
+                                    </a>
+                                    <a class="btn btn-secondary" asp-controller="Game" asp-action="Detail" asp-route-id="@item.Id" asp-area="Admin">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </a>
+
+                                </div>
+                            </td>
                         </tr>
                     }
 

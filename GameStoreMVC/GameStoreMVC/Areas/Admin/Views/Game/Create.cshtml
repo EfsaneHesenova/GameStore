@@ -2,38 +2,25 @@
 @model Game;
 <form method="post">
     <div class="form-group">
-        <label asp-for="Game.Title"></label>
-        <input class="form-control" asp-for="Game.Title">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title">
     </div>
     <div class="form-group">
-        <label asp-for="Game.Description"></label>
-        <input class="form-control" asp-for="Game.Description">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description">
     </div>
     <div class="form-group">
-        <label asp-for="Game.Price"></label>
-        <input class="form-control" asp-for="Game.Price">
+        <label asp-for="Price"></label>
+        <input class="form-control" asp-for="Price">
     </div>
     <div class="form-group">
-        <label asp-for="Master.PhoneNumber"></label>
-        <input class="form-control" asp-for="Master.PhoneNumber">
+        <label asp-for="GameId"></label>
+        <input class="form-control" asp-for="GameId">
     </div>
     <div class="form-group">
-        <label asp-for="Master.Username"></label>
-        <input class="form-control" asp-for="Master.Username">
+        <label asp-for="Image"></label>
+        <input class="form-control" asp-for="Image">
     </div>
-    <div class="form-group">
-        <label asp-for="Master.ExperienceYear"></label>
-        <input class="form-control" asp-for="Master.ExperienceYear">
-    </div>
-    <div class="form-group">
-        <label asp-for="Master.ServiceId" class="control-label">Select Service</label>
-        <select asp-for="Master.ServiceId" class="form-control">
-            <option value="">Select Patient</option>
-            @foreach (var item in Model.Services)
-            {
-                <option value="@item.Value">@item.Text</option>
-            }
-        </select>
 
         <button type="submit" class="btn btn-primary">Submit</button>
 </form>
