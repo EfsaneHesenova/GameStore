@@ -9,5 +9,7 @@ namespace GameStoreMVC.Models
         public int Price { get; set; }
         public int GameId { get; set; }
         public string ImageUrl { get; set; }
+        public ICollection<GameComment> GameComments { get; set; }
+
     }
 }

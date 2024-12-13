@@ -64,6 +64,56 @@ namespace GameStoreMVC.Migrations
 
                     b.ToTable("Games");
                 });
+
+            modelBuilder.Entity("GameStoreMVC.Models.GameComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("GameStoreMVC.Models.GameComment", b =>
+                {
+                    b.HasOne("GameStoreMVC.Models.Game", "Game")
+                        .WithMany("GameComments")
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Game");
+                });
+
+            modelBuilder.Entity("GameStoreMVC.Models.Game", b =>
+                {
+                    b.Navigation("GameComments");
+                });
 #pragma warning restore 612, 618
         }
     }
