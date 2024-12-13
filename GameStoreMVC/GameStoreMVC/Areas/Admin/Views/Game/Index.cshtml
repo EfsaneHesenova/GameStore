@@ -1,6 +1,6 @@
 ﻿@using GameStoreMVC.Models;
 @model IEnumerable<Game>;
-<a type="button" class="btn btn-success mb-3" asp-area="Admin" asp-controller="Game" asp-action="Detail">Create Slider</a>
+<a type="button" class="btn btn-success mb-3" asp-area="Admin" asp-controller="Game" asp-action="Create">Create Slider</a>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -32,7 +32,7 @@
                             <th>@item.Description</th>
                             <td>@item.Price</td>>
                             <td>@item.GameId</td>>
-                            <td>@item.Image</td>>
+                            <td><img src="~/Uploads/@item.ImageUrl"></td>>
                             <td>
                                 <div class="btn-group" role="group">
                                     <a class="btn btn-primary" asp-controller="Game" asp-action="Update" asp-route-id="@item.Id" asp-area="Admin">

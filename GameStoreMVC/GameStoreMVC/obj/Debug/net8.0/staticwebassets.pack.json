@@ -7421,6 +7421,14 @@
       "PackagePath": "staticwebassets\\Admin\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\GameStore\\GameStoreMVC\\GameStoreMVC\\wwwroot\\Uploads\\8e76a23e-5628-4f34-bc9e-b0987e0910db",
+      "PackagePath": "staticwebassets\\Uploads"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\GameStore\\GameStoreMVC\\GameStoreMVC\\wwwroot\\Uploads\\e7e6b881-ec3d-4b56-b62b-9c2513c4fac8",
+      "PackagePath": "staticwebassets\\Uploads"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\GameStore\\GameStoreMVC\\GameStoreMVC\\wwwroot\\css\\animate.css",
       "PackagePath": "staticwebassets\\css\\animate.css"
     },

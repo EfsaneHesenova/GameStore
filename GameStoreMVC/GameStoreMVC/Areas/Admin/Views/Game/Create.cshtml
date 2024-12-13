@@ -1,6 +1,6 @@
-﻿@using GameStoreMVC.Models;
-@model Game;
-<form method="post">
+﻿@using GameStoreMVC.Areas.Admin.ViewModels.GameVMs;
+@model GameCreateVM
+<form method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Title"></label>
         <input class="form-control" asp-for="Title">
@@ -17,9 +17,10 @@
         <label asp-for="GameId"></label>
         <input class="form-control" asp-for="GameId">
     </div>
-    <div class="form-group">
-        <label asp-for="Image"></label>
-        <input class="form-control" asp-for="Image">
+
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Default file input example</label>
+        <input class="form-control" asp-for="Image" id="formFile">
     </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
