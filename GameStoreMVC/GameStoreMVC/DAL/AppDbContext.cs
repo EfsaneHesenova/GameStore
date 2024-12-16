@@ -1,9 +1,10 @@
 ﻿using GameStoreMVC.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStoreMVC.DAL;
 
-public class AppDbContext: DbContext
+public class AppDbContext: IdentityDbContext<AppUser>
 {
     public DbSet<Game> Games { get; set; }
     public DbSet<GameComment> Comments { get; set; }
@@ -19,7 +20,7 @@ public class AppDbContext: DbContext
             .HasOne(g=> g.Game)
             .WithMany(g => g.GameComments)
             .HasForeignKey(g => g.GameId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Cascade);
 
             
     }

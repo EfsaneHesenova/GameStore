@@ -1,5 +1,7 @@
 ﻿using GameStoreMVC.DAL;
+using GameStoreMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GameStoreMVC.Controllers
 {
@@ -14,7 +16,8 @@ namespace GameStoreMVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+          List<Game> games =  _context.Games.OrderByDescending(x => x.Id).Take(4).ToList();
+          return View(games);
         }
     }
 }
